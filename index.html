@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cassie - STEM Educator Portfolio</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#4A5D4E',
+            'secondary': '#6B7F6E',
+            'accent': '#8BA88E',
+            'dark': '#2D3A30',
+            'cream': '#FDFBF7',
+            'sage': '#E8F3F1',
+            'rose': '#F3E8EE',
+            'mint': '#C1E1C1',
+            'sky': '#A7C7E7',
+            'peach': '#FAC898',
+            'lavender': '#B19CD9',
+            'coral': '#FFB7B2',
+            'lime': '#77DD77',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .selection\:bg-mint::selection {
+      background-color: #C1E1C1;
+    }
+    
+    .selection\:text-dark::selection {
+      color: #2D3A30;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-cream text-primary selection:bg-mint selection:text-dark font-serif">
+  
+  <!-- Background Painterly Elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] bg-sage rounded-full blur-[120px] opacity-60"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[50vw] h-[50vw] bg-rose rounded-full blur-[120px] opacity-60"></div>
+    <div class="absolute top-[30%] left-[20%] w-[30vw] h-[30vw] bg-[#FDF9E7] rounded-full blur-[100px] opacity-40"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-8">
+    <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+      <div class="text-3xl font-light tracking-widest flex items-center gap-3">
+        <span class="italic text-accent">Cassie.</span>
+      </div>
+      
+      <div class="hidden md:flex gap-12 text-xs font-semibold uppercase tracking-[0.3em] text-secondary">
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#work" class="hover:text-accent transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-accent transition-colors">Journey</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+
+      <button id="menu-toggle" class="md:hidden text-primary">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md mt-4 mx-8 rounded-2xl p-6">
+      <div class="flex flex-col gap-6 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#work" class="hover:text-accent transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-accent transition-colors">Journey</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-48 pb-32 md:pt-64 md:pb-48 px-8 overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-accent italic font-medium tracking-widest mb-6 animate-fade-in">
+        Innovating STEM Education for the Next Generation
+      </p>
+      
+      <h1 class="text-6xl md:text-9xl font-light leading-[1.1] mb-12 tracking-tight text-dark">
+        The Science of <br />
+        <span class="italic font-serif text-sky drop-shadow-sm">Discovery.</span>
+      </h1>
+      
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-secondary mb-12 leading-relaxed font-sans font-light">
+        Shao Cong (Cassie), a STEM educator and Technical Engineer bridging the gap between dual-major expertise and modern pedagogical practice.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a href="#work" class="px-10 py-4 bg-accent text-white rounded-full hover:bg-[#7A967D] transition-all shadow-lg shadow-accent/20 flex items-center gap-2 group font-sans uppercase text-xs tracking-widest font-bold">
+          View Academic Works
+          <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-32 relative z-10 bg-[#F7F9F7]/50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] overflow-hidden rounded-[4rem] shadow-2xl rotate-[-2deg] bg-[#DDE7E1] flex items-center justify-center">
+            <div class="text-accent text-center p-8">
+              <i data-lucide="user" class="w-20 h-20 mx-auto mb-4 opacity-40"></i>
+              <p class="font-sans italic">Shao Cong / Cassie</p>
+            </div>
+          </div>
+          <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-[#DDE7E1] rounded-full -z-10 blur-2xl"></div>
+        </div>
+        
+        <div class="space-y-8">
+          <span class="text-accent uppercase tracking-[0.4em] text-xs font-bold">Educational Visionary</span>
+          <h2 class="text-5xl font-light text-dark leading-tight italic">Bridging Arts, Engineering, and Education.</h2>
+          <p class="text-secondary text-lg leading-relaxed font-sans font-light">
+            Currently pursuing a Master's in STEM Education at EdUHK, my journey spans from technical service engineering to bilingual science communication. I believe in a professional knowledge system that integrates hands-on practice with rigorous educational theory.
+          </p>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <i data-lucide="graduation-cap" class="text-accent mt-1 shrink-0 w-6 h-6"></i>
+              <div>
+                <h4 class="text-lg font-medium text-dark">The Education University of Hong Kong</h4>
+                <p class="text-sm text-secondary font-sans">Master's Degree in STEM Education | 2025 - Present</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <i data-lucide="graduation-cap" class="text-accent mt-1 shrink-0 w-6 h-6"></i>
+              <div>
+                <h4 class="text-lg font-medium text-dark">Wuhan Institute of Technology</h4>
+                <p class="text-sm text-secondary font-sans">Dual Bachelors: English & Chemical Engineering | 2009 - 2013</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Education Section -->
+  <section class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-4xl font-light mb-16 text-center">Educational Journey</h2>
+      
+      <!-- EdUHK -->
+      <div class="mb-16 bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+            <i data-lucide="graduation-cap" class="w-6 h-6 text-accent"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-medium text-dark">The Education University of Hong Kong</h3>
+            <p class="text-sm text-accent font-sans">Master's Degree in STEM Education | Sep. 2025 – Present</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ml-16">
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Professional Courses</h4>
+            <ul class="text-secondary text-sm font-sans font-light space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                STEM Curriculum Design
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Children's Programming / Micro:bit / 3D Printing / Lego / Robot Programming
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Engineering Design Teaching
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                STEM Education Research Theory
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Teaching Seminars</h4>
+            <ul class="text-secondary text-sm font-sans font-light space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="users" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Interdisciplinary course co-hosted by EdUHK and South China Normal University
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                International Collaboration Seminar on AI-Integrated Education (EdUHK & Kyushu University)
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="cpu" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                AI and AR teaching workshops on application and implementation paths
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-8 ml-16 p-6 bg-sage/30 rounded-2xl">
+          <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-3">Academic Achievements</h4>
+          <p class="text-secondary text-sm font-sans font-light">
+            Three abstracts and papers, including "Talent-Oriented STEM Education: Curriculum Optimization for Hong Kong Secondary Schools Facing Advanced Manufacturing and New Energy Development", were selected for the ICLT 2026 International Conference.
+          </p>
+        </div>
+        
+        <div class="mt-6 ml-16">
+          <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-3">Social Practice</h4>
+          <ul class="text-secondary text-sm font-sans font-light space-y-2">
+            <li class="flex items-start gap-2">
+              <i data-lucide="leaf" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Selected for "Earth Academy 2025" project - curriculum design for sustainable development education
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="briefcase" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Enterprise Innovation Camp of Minghui Think Tank - completed project roadshow
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="award" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Certificate of Career and Life Education Facilitator
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Wuhan Institute -->
+      <div class="bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+            <i data-lucide="graduation-cap" class="w-6 h-6 text-accent"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-medium text-dark">Wuhan Institute of Technology</h3>
+            <p class="text-sm text-accent font-sans">Bachelor's Degree | English & Chemical Engineering (Dual Majors) | Sep. 2009 - Jun. 2013</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ml-16">
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Academic Performance</h4>
+            <ul class="text-secondary text-sm font-sans font-light space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="book-open" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                English, Translation, Advanced Mathematics, College Physics
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="flask-conical" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Inorganic/Organic/Physical Chemistry, Chemical Engineering
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="cog" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Mechanical Drawing, Process Design
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Dual Bachelor's Degrees in Arts and Engineering; Multiple honors
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Practical Experience</h4>
+            <ul class="text-secondary text-sm font-sans font-light space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="microscope" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Laboratory assistant, research project literature review
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="trophy" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Excellence Award in Written Translation Competition
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="heart" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Youth Volunteer Association - Excellent League Cadre
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="music" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Vice President of Folk Music Association
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-8">
+      <h2 class="text-5xl font-light mb-16 text-center">Professional Path</h2>
+      
+      <!-- English Editor -->
+      <div class="mb-16 bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+            <i data-lucide="edit" class="w-6 h-6 text-accent"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-medium text-dark">Wuhan Yuanlai Culture Communication Co., Ltd.</h3>
+            <p class="text-sm text-accent font-sans">English Editor | May 2022 - Jun. 2025</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ml-16">
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Job Responsibilities</h4>
+            <ul class="text-secondary text-sm font-sans font-light space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="book" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Compiled bilingual teaching materials for secondary school physics and chemistry
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="presentation" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Delivered popular science lectures for primary and secondary school students at public libraries
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Built a bilingual popular science website for teenagers, integrating STEM and cutting-edge scientific knowledge
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="video" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Edited bilingual video resources for university professional courses
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="clapperboard" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+                Full process of popular science short video production (content planning + editing)
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Core Competencies</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Physics & Chemistry Materials Development</span>
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Popular Science Lectures</span>
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Event Planning</span>
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Video Editing</span>
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Digital Operation</span>
+              <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Translation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Technical Service Engineer -->
+      <div class="mb-16 bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+            <i data-lucide="settings" class="w-6 h-6 text-accent"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-medium text-dark">BODA Industrial Technology Wuhan Co., Ltd.</h3>
+            <p class="text-sm text-accent font-sans">Technical Service Engineer | Jul. 2013 - May 2022</p>
+          </div>
+        </div>
+        
+        <div class="ml-16">
+          <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-4">Key Achievements</h4>
+          <ul class="text-secondary text-sm font-sans font-light space-y-2">
+            <li class="flex items-start gap-2">
+              <i data-lucide="search" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Investigated market and technical needs in automotive, energy, machinery, and materials industries
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="users" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Coordinated with domestic and foreign customers, providing Chinese-English technical support
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Prepared technical and promotional materials including product recommendation plans and industry solutions
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="mic" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Conducted industry technical exchange lectures and on-site technical services
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Developed technical training courses for employee training and new employee induction
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Part-time Tutor -->
+      <div class="bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+            <i data-lucide="school" class="w-6 h-6 text-accent"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-medium text-dark">Part-time Academic Tutor</h3>
+            <p class="text-sm text-accent font-sans">Jan. 2022 - Jun. 2025</p>
+          </div>
+        </div>
+        
+        <div class="ml-16">
+          <ul class="text-secondary text-sm font-sans font-light space-y-2">
+            <li class="flex items-start gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Tutored secondary school students in physics, chemistry and English
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="star" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+              Well-liked by students and helped them achieve significant improvement in academic performance
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section id="work" class="py-32 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col mb-20">
+        <h2 class="text-5xl font-light mb-4">Research & Practice</h2>
+        <div class="w-24 h-[1px] bg-accent"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-[300px]">
+        
+        <!-- Project 1 - Large -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl md:row-span-2">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" alt="Talent-Oriented STEM Research" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">ICLT 2026 Academic Paper</span>
+            <h3 class="text-2xl font-light text-dark">Talent-Oriented STEM Research</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&q=80&w=800" alt="Earth Academy 2025" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">Sustainability Education</span>
+            <h3 class="text-2xl font-light text-dark">Earth Academy 2025</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" alt="AI-Integrated Education" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">International Seminar</span>
+            <h3 class="text-2xl font-light text-dark">AI-Integrated Education</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 - Medium -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl lg:col-span-2">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Bilingual Popular Science" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">Digital Curriculum</span>
+            <h3 class="text-2xl font-light text-dark">Bilingual Popular Science</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 5 - Medium -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl lg:col-span-2">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="STEM Curriculum Design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">Pedagogy</span>
+            <h3 class="text-2xl font-light text-dark">STEM Curriculum Design</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 6 - Large -->
+        <div class="group relative overflow-hidden rounded-[3rem] transition-all duration-700 shadow-sm hover:shadow-xl md:row-span-2">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" alt="Career Experiential Curricula" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-cream/95 via-cream/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-10 w-full">
+            <span class="text-accent text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">Social Practice</span>
+            <h3 class="text-2xl font-light text-dark">Career Experiential Curricula</h3>
+            <div class="mt-4 overflow-hidden h-0 group-hover:h-8 transition-all duration-500">
+              <button class="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                View Project <i data-lucide="external-link" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills/Services Section -->
+  <section id="services" class="py-32 bg-sage/30">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <div class="group cursor-default">
+          <div class="mb-6 text-accent transform group-hover:-translate-y-2 transition-transform duration-500">
+            <i data-lucide="code" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-medium mb-4 text-dark tracking-wide">STEM Instruction</h3>
+          <p class="text-secondary text-sm leading-relaxed font-sans font-light">Expertise in Micro:bit, 3D Printing, Lego, and Robot Programming.</p>
+        </div>
+        
+        <div class="group cursor-default">
+          <div class="mb-6 text-accent transform group-hover:-translate-y-2 transition-transform duration-500">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-medium mb-4 text-dark tracking-wide">Bilingual Curriculum</h3>
+          <p class="text-secondary text-sm leading-relaxed font-sans font-light">Development of high-quality English/Chinese teaching materials.</p>
+        </div>
+        
+        <div class="group cursor-default">
+          <div class="mb-6 text-accent transform group-hover:-translate-y-2 transition-transform duration-500">
+            <i data-lucide="wind" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-medium mb-4 text-dark tracking-wide">Technical Support</h3>
+          <p class="text-secondary text-sm leading-relaxed font-sans font-light">Professional engineering application consulting and training.</p>
+        </div>
+        
+        <div class="group cursor-default">
+          <div class="mb-6 text-accent transform group-hover:-translate-y-2 transition-transform duration-500">
+            <i data-lucide="flower-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-medium mb-4 text-dark tracking-wide">Eco-Education</h3>
+          <p class="text-secondary text-sm leading-relaxed font-sans font-light">Integrating environmental protection with STEM concepts.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates & Honors Section -->
+  <section class="py-24 px-8 bg-[#F7F9F7]/50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-light mb-16 text-center">Certificates & Honors</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Qualification Certificates -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+              <i data-lucide="file-badge" class="w-6 h-6 text-accent"></i>
+            </div>
+            <h3 class="text-2xl font-medium text-dark">Qualification Certificates</h3>
+          </div>
+          
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-3">Teacher Qualifications</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Primary School Science</span>
+                <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Senior High School Chemistry</span>
+                <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Senior High School English</span>
+                <span class="px-4 py-2 bg-sage/50 rounded-full text-xs font-sans text-secondary">Senior Family Early Education Instructor</span>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-3">Language Certifications</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">TEM-8</span>
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">CET-6</span>
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">IELTS 6.5</span>
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">CATTI Level 3 Written</span>
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">BEC Vantage</span>
+                <span class="px-4 py-2 bg-sky/30 rounded-full text-xs font-sans text-secondary">Mandarin Level 2 Grade A</span>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="text-sm uppercase tracking-widest font-bold text-accent mb-3">Professional Certifications</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 bg-lavender/30 rounded-full text-xs font-sans text-secondary">ISO9001 Quality Management System Internal Auditor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Honorary Certificates -->
+        <div class="bg-white/60 backdrop-blur-sm rounded-[3rem] p-10 shadow-sm">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+              <i data-lucide="trophy" class="w-6 h-6 text-accent"></i>
+            </div>
+            <h3 class="text-2xl font-medium text-dark">Honorary Certificates</h3>
+          </div>
+          
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 p-4 bg-cream/50 rounded-2xl">
+              <i data-lucide="medal" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+              <div>
+                <h4 class="font-medium text-dark">Second-Class Scholarship</h4>
+                <p class="text-sm text-secondary font-sans font-light">Awarded Twice</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-cream/50 rounded-2xl">
+              <i data-lucide="medal" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+              <div>
+                <h4 class="font-medium text-dark">Excellent League Cadre</h4>
+                <p class="text-sm text-secondary font-sans font-light">Youth Volunteer Association Leadership</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-cream/50 rounded-2xl">
+              <i data-lucide="medal" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+              <div>
+                <h4 class="font-medium text-dark">Excellence Award in Written Translation</h4>
+                <p class="text-sm text-secondary font-sans font-light">Foreign Language Translation Competition</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-cream/50 rounded-2xl">
+              <i data-lucide="medal" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+              <div>
+                <h4 class="font-medium text-dark">Excellence Award Winner</h4>
+                <p class="text-sm text-secondary font-sans font-light">Social Practice Report Writing</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-cream/50 rounded-2xl">
+              <i data-lucide="medal" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+              <div>
+                <h4 class="font-medium text-dark">Excellent League Member</h4>
+                <p class="text-sm text-secondary font-sans font-light">Outstanding Student Recognition</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-32 relative px-8 overflow-hidden">
+    <div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-full h-full bg-rose/40 -z-10 blur-3xl rounded-full scale-150"></div>
+    
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-5xl md:text-7xl font-light mb-12 text-dark">Let's Shape the <br /><span class="italic">Future of STEM.</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div class="flex flex-col items-center gap-4">
+          <i data-lucide="mail" class="text-accent w-8 h-8"></i>
+          <p class="font-sans font-light text-secondary">s1164621@s.eduhk.hk</p>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <i data-lucide="phone" class="text-accent w-8 h-8"></i>
+          <p class="font-sans font-light text-secondary">+852 84965526</p>
+        </div>
+      </div>
+
+      <form class="space-y-8 bg-white/40 backdrop-blur-xl p-12 rounded-[4rem] border border-white shadow-xl shadow-accent/5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <input type="text" placeholder="Your Interest" class="w-full bg-transparent border-b border-accent/30 py-4 focus:outline-none focus:border-accent transition-colors font-sans font-light italic">
+          <input type="email" placeholder="Contact Details" class="w-full bg-transparent border-b border-accent/30 py-4 focus:outline-none focus:border-accent transition-colors font-sans font-light italic">
+        </div>
+        <textarea rows="4" placeholder="How can we collaborate on education or research?" class="w-full bg-transparent border-b border-accent/30 py-4 focus:outline-none focus:border-accent transition-colors font-sans font-light italic resize-none"></textarea>
+        <button type="submit" class="px-12 py-5 bg-accent text-white rounded-full hover:shadow-2xl hover:bg-[#7A967D] transition-all font-sans uppercase text-xs tracking-[0.3em] font-bold">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-sage px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center">
+      <p class="text-[#AABBAA] font-sans text-xs uppercase tracking-widest">© 2026 Shao Cong (Cassie) — STEM Educator</p>
+      <div class="flex gap-12 font-sans text-xs uppercase tracking-widest text-secondary">
+        <a href="#" class="hover:text-accent transition-colors">LinkedIn</a>
+        <a href="#" class="hover:text-accent transition-colors">ResearchGate</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Scroll effect for navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-4', 'bg-white/70', 'backdrop-blur-md', 'border-b', 'border-sage');
+        navbar.classList.remove('py-8');
+      } else {
+        navbar.classList.remove('py-4', 'bg-white/70', 'backdrop-blur-md', 'border-b', 'border-sage');
+        navbar.classList.add('py-8');
+      }
+    });
+    
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+    
+    menuToggle.addEventListener('click', function() {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('hidden');
+        menuToggle.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+      }
+      lucide.createIcons();
+    });
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        isMenuOpen = false;
+        menuToggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+        lucide.createIcons();
+      });
+    });
+  </script>
+
+</body>
+</html>
